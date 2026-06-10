@@ -4,6 +4,7 @@ from utils.helpers import print_success, print_error, print_info
 
 # setting up the CLI and all the subcommands
 parser = argparse.ArgumentParser(description="Project Management CLI Tool")
+parser.add_argument("--debug", action="store_true", help="Show debug info")
 subparsers = parser.add_subparsers(dest="command")
 
 user_parser = subparsers.add_parser("add-user")
@@ -29,6 +30,10 @@ args = parser.parse_args()
 
 # load whatever is saved so far
 data = load_data()
+
+if args.debug:
+    print(f"[debug] command: {args.command}")
+    print(f"[debug] loaded {len(data)} user(s) from database")
 
 if args.command == "add-user":
     # make sure we don't add duplicates

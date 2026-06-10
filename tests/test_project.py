@@ -1,7 +1,14 @@
+import os
+import json
+import pytest
 from models.task import Task
 from models.project import Project
 from models.user import User
+from models.base import BaseModel
+from services.storage import load_data, save_data
 
+
+# ── model tests ────────────────────────────────────────────
 
 def test_task_completion():
     task = Task("Write tests")
@@ -48,3 +55,48 @@ def test_user_to_dict():
     result = user.to_dict()
     assert result["name"] == "Alex"
     assert len(result["projects"]) == 1
+
+
+# ── inheritance tests ───────────────────────────────────────
+
+def test_user_inherits_base_model():
+    assert issubclass(User, BaseModel)
+
+
+def test_project_inherits_base_model():
+    assert issubclass(Project, BaseModel)
+
+
+def test_task_inherits_base_model():
+    assert issubclass(Task, BaseModel)
+
+
+def test_base_model_raises_not_implemented():
+    base = BaseModel()
+    with pytest.raises(NotImplementedError):
+        base.to_dict()
+
+
+# ── storage tests ───────────────────────────────────────────
+
+def test_save_and_load_data(tmp_path, monkeypatch):
+    db = tmp_path / "database.json"
+    monkeypatch.setattr("services.storage.DB_FILE", str(db))
+
+    sample = [{"name": "Alex", "projects": []}]
+    save_data(sample)
+
+    result = load_data()
+    assert result[0]["name"] == "Alex"
+
+
+def test_load_data_returns_empty_when_no_file(tmp_path, monkeypatch):
+    monkeypatch.setattr("services.storage.DB_FILE", str(tmp_path / "missing.json"))
+    assert load_data() == []
+
+
+def test_load_data_handles_corrupt_file(tmp_path, monkeypatch):
+    db = tmp_path / "database.json"
+    db.write_text("not valid json")
+    monkeypatch.setattr("services.storage.DB_FILE", str(db))
+    assert load_data() == []

@@ -1,4 +1,7 @@
-class Project:
+from models.base import BaseModel
+
+
+class Project(BaseModel):
     def __init__(self, title):
         self.title = title
         self.tasks = []

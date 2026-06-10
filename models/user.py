@@ -1,4 +1,7 @@
-class User:
+from models.base import BaseModel
+
+
+class User(BaseModel):
     def __init__(self, name):
         self.name = name
         self.projects = []  # starts with no projects

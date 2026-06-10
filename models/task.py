@@ -1,4 +1,7 @@
-class Task:
+from models.base import BaseModel
+
+
+class Task(BaseModel):
     def __init__(self, title):
         self.title = title
         self.completed = False

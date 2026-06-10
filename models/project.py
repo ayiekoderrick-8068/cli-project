@@ -9,5 +9,5 @@ class Project:
     def to_dict(self):
         return {
             "title": self.title,
-            "tasks": [task.to_dict() for task in self.tasks]
+            "tasks": [t.to_dict() for t in self.tasks]
         }

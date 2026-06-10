@@ -1,1 +1,20 @@
-[]
+[
+    {
+        "name": "Alex",
+        "projects": [
+            {
+                "title": "CLI Tool",
+                "tasks": [
+                    {
+                        "title": "Build CLI",
+                        "completed": true
+                    },
+                    {
+                        "title": "Write Docs",
+                        "completed": false
+                    }
+                ]
+            }
+        ]
+    }
+]

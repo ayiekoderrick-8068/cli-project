@@ -3,6 +3,7 @@ class Task:
         self.title = title
         self.completed = False
 
+    # call this when the task is done
     def complete(self):
         self.completed = True
 

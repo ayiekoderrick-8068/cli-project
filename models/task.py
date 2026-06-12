@@ -1,7 +1,7 @@
 from models.base import BaseModel
 
 
-# A task belongs to a project, it starts as not completed
+# A task belongs to a project
 class Task(BaseModel):
 
     def __init__(self, title):

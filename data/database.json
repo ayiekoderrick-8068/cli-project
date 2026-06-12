@@ -1,1 +1,34 @@
-[]
+[
+    {
+        "name": "Alex",
+        "projects": [
+            {
+                "title": "CLI Tool",
+                "tasks": [
+                    {
+                        "title": "Build the CLI",
+                        "completed": true
+                    },
+                    {
+                        "title": "Write the README",
+                        "completed": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Jordan",
+        "projects": [
+            {
+                "title": "Website",
+                "tasks": [
+                    {
+                        "title": "Design homepage",
+                        "completed": true
+                    }
+                ]
+            }
+        ]
+    }
+]

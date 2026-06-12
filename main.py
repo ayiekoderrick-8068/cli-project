@@ -11,24 +11,30 @@ subparsers = parser.add_subparsers(dest="command")
 # user commands
 user_parser = subparsers.add_parser("add-user")
 user_parser.add_argument("--name", required=True)
+user_parser.add_argument("--debug", action="store_true")
 
-subparsers.add_parser("list-users")
+list_users_parser = subparsers.add_parser("list-users")
+list_users_parser.add_argument("--debug", action="store_true")
 
 # project commands
 project_parser = subparsers.add_parser("add-project")
 project_parser.add_argument("--user", required=True)
 project_parser.add_argument("--title", required=True)
+project_parser.add_argument("--debug", action="store_true")
 
 list_projects_parser = subparsers.add_parser("list-projects")
 list_projects_parser.add_argument("--user", required=True)
+list_projects_parser.add_argument("--debug", action="store_true")
 
 # task commands
 task_parser = subparsers.add_parser("add-task")
 task_parser.add_argument("--project", required=True)
 task_parser.add_argument("--title", required=True)
+task_parser.add_argument("--debug", action="store_true")
 
 complete_parser = subparsers.add_parser("complete-task")
 complete_parser.add_argument("--task", required=True)
+complete_parser.add_argument("--debug", action="store_true")
 
 args = parser.parse_args()
 

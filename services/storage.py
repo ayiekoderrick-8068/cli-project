@@ -1,12 +1,12 @@
 import json
 import os
 
-# path to where all the data gets saved
+
 DB_FILE = "data/database.json"
 
 
 def load_data():
-    # if the file doesn't exist yet, just return an empty list
+    # if the file doesnt exist yet, just return an empty list
     if not os.path.exists(DB_FILE):
         return []
 

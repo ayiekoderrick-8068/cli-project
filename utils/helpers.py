@@ -1,5 +1,6 @@
 from rich.console import Console
 
+# using rich to print colored messages in the terminal
 console = Console()
 
 

@@ -6,12 +6,64 @@
                 "title": "CLI Tool",
                 "tasks": [
                     {
-                        "title": "Build CLI",
+                        "title": "Build the CLI",
                         "completed": true
-                    },
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Derek",
+        "projects": [
+            {
+                "title": "School Management",
+                "tasks": [
                     {
-                        "title": "Write Docs",
-                        "completed": false
+                        "title": "Build School Management",
+                        "completed": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "John",
+        "projects": [
+            {
+                "title": "Pizza Management",
+                "tasks": [
+                    {
+                        "title": "Build Pizza Management",
+                        "completed": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Oyaro",
+        "projects": [
+            {
+                "title": "Finance Management",
+                "tasks": [
+                    {
+                        "title": "Build Finance Management",
+                        "completed": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Magara",
+        "projects": [
+            {
+                "title": "Health Management",
+                "tasks": [
+                    {
+                        "title": "Build Health Management",
+                        "completed": true
                     }
                 ]
             }

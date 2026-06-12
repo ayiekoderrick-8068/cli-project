@@ -1,7 +1,9 @@
 from models.base import BaseModel
 
 
+
 class Project(BaseModel):
+
     def __init__(self, title):
         self.title = title
         self.tasks = []
@@ -9,6 +11,7 @@ class Project(BaseModel):
     def add_task(self, task):
         self.tasks.append(task)
 
+   
     def to_dict(self):
         return {
             "title": self.title,

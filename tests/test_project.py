@@ -1,5 +1,3 @@
-import os
-import json
 import pytest
 from models.task import Task
 from models.project import Project
@@ -8,7 +6,7 @@ from models.base import BaseModel
 from services.storage import load_data, save_data
 
 
-# ── model tests ────────────────────────────────────────────
+# --- Task tests ---
 
 def test_task_completion():
     task = Task("Write tests")
@@ -28,10 +26,11 @@ def test_task_to_dict():
     assert result["completed"] is False
 
 
+# --- Project tests ---
+
 def test_project_add_task():
     project = Project("My Project")
-    task = Task("Do something")
-    project.add_task(task)
+    project.add_task(Task("Do something"))
     assert len(project.tasks) == 1
 
 
@@ -42,6 +41,8 @@ def test_project_to_dict():
     assert result["title"] == "Alpha"
     assert len(result["tasks"]) == 1
 
+
+# --- User tests ---
 
 def test_user_add_project():
     user = User("Alex")
@@ -57,7 +58,7 @@ def test_user_to_dict():
     assert len(result["projects"]) == 1
 
 
-# ── inheritance tests ───────────────────────────────────────
+# --- Inheritance tests ---
 
 def test_user_inherits_base_model():
     assert issubclass(User, BaseModel)
@@ -77,25 +78,23 @@ def test_base_model_raises_not_implemented():
         base.to_dict()
 
 
-# ── storage tests ───────────────────────────────────────────
+# --- Storage tests ---
 
 def test_save_and_load_data(tmp_path, monkeypatch):
     db = tmp_path / "database.json"
     monkeypatch.setattr("services.storage.DB_FILE", str(db))
 
-    sample = [{"name": "Alex", "projects": []}]
-    save_data(sample)
-
+    save_data([{"name": "Alex", "projects": []}])
     result = load_data()
     assert result[0]["name"] == "Alex"
 
 
-def test_load_data_returns_empty_when_no_file(tmp_path, monkeypatch):
+def test_load_returns_empty_when_no_file(tmp_path, monkeypatch):
     monkeypatch.setattr("services.storage.DB_FILE", str(tmp_path / "missing.json"))
     assert load_data() == []
 
 
-def test_load_data_handles_corrupt_file(tmp_path, monkeypatch):
+def test_load_handles_corrupt_file(tmp_path, monkeypatch):
     db = tmp_path / "database.json"
     db.write_text("not valid json")
     monkeypatch.setattr("services.storage.DB_FILE", str(db))

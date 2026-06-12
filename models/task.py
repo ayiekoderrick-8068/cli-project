@@ -1,15 +1,17 @@
 from models.base import BaseModel
 
 
+# A task belongs to a project
 class Task(BaseModel):
+
     def __init__(self, title):
         self.title = title
         self.completed = False
 
-    # call this when the task is done
     def complete(self):
         self.completed = True
 
+    # converts the task to a dictionary for saving
     def to_dict(self):
         return {
             "title": self.title,

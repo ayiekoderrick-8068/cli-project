@@ -35,7 +35,7 @@
                 "tasks": [
                     {
                         "title": "Build Pizza Management",
-                        "completed": true
+                        "completed": false
                     }
                 ]
             }
@@ -68,5 +68,9 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "Alice",
+        "projects": []
     }
 ]

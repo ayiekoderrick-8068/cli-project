@@ -1,12 +1,14 @@
 import argparse
 from services.storage import load_data, save_data
-from utils.helpers import print_success, print_error, print_info
+from utils.helpers import print_success, print_error, print_info, print_showcase
 
 # argparse lets us run commands from the terminal like:
 # python main.py add-user --name "Alex"
 parser = argparse.ArgumentParser(description="Project Management CLI Tool")
 parser.add_argument("--debug", action="store_true", help="Show debug info")
 subparsers = parser.add_subparsers(dest="command")
+
+subparsers.add_parser("showcase")
 
 # user commands
 user_parser = subparsers.add_parser("add-user")
@@ -112,6 +114,9 @@ elif args.command == "complete-task":
                     exit(0)
 
     print_error(f"Task '{args.task}' not found.")
+
+elif args.command == "showcase":
+    print_showcase(data)
 
 else:
     parser.print_help()

@@ -8,26 +8,47 @@
                     {
                         "title": "Build the CLI",
                         "completed": true
-                    },
-                    {
-                        "title": "Write the README",
-                        "completed": false
                     }
                 ]
             }
         ]
     },
     {
-        "name": "Jordan",
+        "name": "Derek",
         "projects": [
             {
-                "title": "Website",
+                "title": "My school management",
+                "tasks": []
+            },
+            {
+                "title": "My school management",
+                "tasks": []
+            },
+            {
+                "title": "School Management",
                 "tasks": [
                     {
-                        "title": "Design homepage",
+                        "title": "Build School Management",
                         "completed": true
                     }
                 ]
+            }
+        ]
+    },
+    {
+        "name": "John",
+        "projects": [
+            {
+                "title": "My  pizza  management",
+                "tasks": []
+            },
+            {
+                "title": "My  pizza  management",
+                "tasks": []
+            },
+            {
+                "title": "My  pizza  management",
+                "tasks": []
             }
         ]
     }

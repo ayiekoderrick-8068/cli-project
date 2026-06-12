@@ -17,14 +17,6 @@
         "name": "Derek",
         "projects": [
             {
-                "title": "My school management",
-                "tasks": []
-            },
-            {
-                "title": "My school management",
-                "tasks": []
-            },
-            {
                 "title": "School Management",
                 "tasks": [
                     {
@@ -39,16 +31,41 @@
         "name": "John",
         "projects": [
             {
-                "title": "My  pizza  management",
-                "tasks": []
-            },
+                "title": "Pizza Management",
+                "tasks": [
+                    {
+                        "title": "Build Pizza Management",
+                        "completed": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Oyaro",
+        "projects": [
             {
-                "title": "My  pizza  management",
-                "tasks": []
-            },
+                "title": "Finance Management",
+                "tasks": [
+                    {
+                        "title": "Build Finance Management",
+                        "completed": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Magara",
+        "projects": [
             {
-                "title": "My  pizza  management",
-                "tasks": []
+                "title": "Health Management",
+                "tasks": [
+                    {
+                        "title": "Build Health Management",
+                        "completed": true
+                    }
+                ]
             }
         ]
     }
